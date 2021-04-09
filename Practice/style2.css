@@ -1,0 +1,100 @@
+body {
+    background-image: url("picture-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 150%;
+}
+
+nav {
+    background: whitesmoke;
+    height: 80px;
+    width: 100;
+}
+
+label {
+    color: black;
+    font-size: 50px;
+    padding: 15px;
+    padding-top: 20px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 35px;
+    font-size: 20px;
+}
+
+v ul li a {
+    color: whitesmoke;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.main-area {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.first-box {
+    color: #000;
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.second-box {
+    color: white;
+}
+
+.main-area button {
+    background-color: #2e76db;
+    color: white;
+    margin-left: 182px;
+    margin-top: 10px;
+}
+
+.lis {
+    background-color: orange;
+    color: white;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+
+ul li:hover {
+    background: lightgrey;
+}
+
+.demo {
+    color: white;
+    font-size: large;
+    list-style-type: none;
+}
+
+.UAdd {
+    background-color: gray;
+    padding: 20px;
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+.btn-add {
+    background-color: rgb(12, 187, 50);
+    color: white;
+    padding: 05 px 63px;
+}
+
+.second-box>img {
+    width: 400px;
+    height: 400px;
+}

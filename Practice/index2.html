@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script type="text/javascript">
+        function showtime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            document.getElementById('timer').innerHTML = h + ":" + m + ":" + s;
+            var t = setTimeout(showtime, 1000);
+            window.onload = showtime();
+        }
+
+
+        function ContactValidation() {
+            var x = document.contactForm.iname.value;
+            var y = document.contactForm.iemail.value;
+            var z = document.contactForm.icomment.value;
+            if (x == "" || x == null) {
+                alert("Name must be filled");
+            }
+            if (y == "" || y == null) {
+                alert("Email must be filled");
+            }
+            if (z == "" || z == null) {
+                alert("Comments should also be filled");
+            }
+        }
+
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("img").src = images[x];
+        }
+
+        function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("img").src = images[x];
+        }
+
+        function changeImage() {
+            setInterval(displayNextImage, 2500);
+        }
+        var images = [],
+            x = -1;
+        images[0] = "1.jpg";
+        images[1] = "map.png";
+        images[2] = "2.jpg";
+        images[3] = "flex-1.jpg";
+        images[4] = "flex-2.jpg"
+    </script>
+</head>
+
+<body onload="changeImage()">
+    <header>
+
+        <nav>
+            <label>UPPER</label>
+            <ul>
+                <li>Home</li>
+                <li>First Gallery</li>
+                <li>Second</li>
+                <li>Third Grid</li>
+                <li>About Us</li>
+                <li>Contact</li>
+                <li id="timer"></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-area">
+        <div class="first-box">
+            <h1>Contact Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Facilis eum corrupti porro qui eos quidem reprehe<br> nderit sed omnis incidunt beatae.
+            </p>
+            <form name="contactForm" onsubmit="return ContactValidation()">
+                <input type="text" placeholder="Name" size="31" name="iname"><br>
+                <input type="text" placeholder="E-mail" size="31" name="iemail"><br>
+                <textarea placeholder="Your Comments" rows="10" cols="30" name="icomment"></textarea><br>
+                <button type="submit" value="submit">Submit</button>
+            </form>
+        </div>
+        <div class="second-box">
+            <h2>123 New Street 1100, San Francisco, CA</h2>
+            <img src="2.jpg" id="img" />
+        </div>
+    </div>
+</body>
+
+</html>

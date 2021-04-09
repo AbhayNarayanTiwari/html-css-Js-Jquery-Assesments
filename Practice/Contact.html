@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<script>
+    function AddItem() {
+        var li = document.createElement("li");
+        var ul = document.getElementById("user-input").value;
+        var t = document.createTextNode(ul);
+        li.appendChild(t);
+        if (ul === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("ul-area").appendChild(li);
+        }
+        document.getElementById("user-input").value = "";
+    }
+</script>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <div id="list-header" class="list-header">
+                <h1> My To Do List</h1>
+                <input type="text" id="user-input" placeholder="Title.....">
+                <button onclick="AddItem()" class="btn-add" type="button">Add</button>
+            </div>
+            <ul id="ul-area"></ul>
+        </div>
+    </center>
+</body>
+
+</html>
