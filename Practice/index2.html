@@ -26,6 +26,13 @@
             if (y == "" || y == null) {
                 alert("Email must be filled");
             }
+            if (y.indexOf('@') <= 0) {
+                alert("Invalid @ Position");
+                return false;
+            }
+            if ((y.charAt(y.length - 4) != '.') && (y.charAt(y.length - 3) != '.')) {
+                alert("Invalid dot(.) position")
+            }
             if (z == "" || z == null) {
                 alert("Comments should also be filled");
             }
@@ -35,12 +42,6 @@
             x = (x === images.length - 1) ? 0 : x + 1;
             document.getElementById("img").src = images[x];
         }
-
-        function displayPreviousImage() {
-            x = (x <= 0) ? images.length - 1 : x - 1;
-            document.getElementById("img").src = images[x];
-        }
-
         function changeImage() {
             setInterval(displayNextImage, 2500);
         }
