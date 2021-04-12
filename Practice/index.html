@@ -7,11 +7,11 @@
     <script type="text/javascript">
         function displayNextImage() {
             x = (x === images.length - 1) ? 0 : x + 1;
-            document.getElementById("img").src = images[x];
+            document.getElementById("img1").src = images[x];
         }
 
         function changeImage() {
-            setInterval(displayNextImage, 2500);
+            setInterval(displayNextImage, 5000);
         }
         var images = [],
             x = -1;
@@ -19,7 +19,27 @@
         images[1] = "map.png";
         images[2] = "2.jpg";
         images[3] = "flex-1.jpg";
-        images[4] = "flex-2.jpg"
+        images[4] = "flex-2.jpg";
+
+        function swapTwoImage() {
+            var image1, image2;
+            image1 = document.getElementById('img1').src;
+            image2 = document.getElementById('img2').src;
+            document.getElementById('img2').src = image1;
+            document.getElementById('img1').src = image2;
+        }
+
+        function swapThreeImage() {
+            var image1, image2, image3, image4;
+            image1 = document.getElementById('img1').src;
+            image4 = document.getElementById('img4').src;
+            image2 = document.getElementById('img2').src;
+            image3 = document.getElementById('img3').src;
+            document.getElementById('img4').src = image1;
+            document.getElementById('img1').src = image4;
+            document.getElementById('img2').src = image3;
+            document.getElementById('img3').src = image2;
+        }
     </script>
 </head>
 
@@ -45,16 +65,16 @@
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br> Nulla voluptatum fuga mollitia dignissimos<br> quae dolorem eaque amet quod. Laborum, maiores.
     </p>
     <div class="img-area" style="position: relative; color: white; text-align: center;">
-        <div class="single-img"><img src="flex-1.jpg" height="400px" width="250px" id="img">
+        <div class="single-img"><img src="flex-1.jpg" height="400px" width="250px" id="img1" onclick="swapTwoImage()">
             <div class="top-left" style="position: absolute; top: 50%; left: 18%; font-size: larger; transform:translate(-50%,-50%);">First Image</div>
         </div>
-        <div class="single-img" style="padding: 30px; "><img src="flex-2.jpg" height="400px" width="250px">
+        <div class="single-img" style="padding: 30px; "><img src="flex-2.jpg" height="400px" width="250px" id="img2" onclick="swapThreeImage()">
             <div class="top-left" style="position: absolute; top: 50%; left: 38%;  font-size: larger; transform:translate(-50%,-50%);">Second Image</div>
         </div>
-        <div class="single-img"><img src="flex-3.jpg" height="400px" width="250px">
+        <div class="single-img"><img src="flex-3.jpg" height="400px" width="250px" id="img3">
             <div class="top-left" style="position: absolute; top: 50%; left: 60%;  font-size: larger; transform:translate(-50%,-50%);">Third Image</div>
         </div>
-        <div class="single-img" style="padding: 30px;"><img src="flex-4.jpg" height="400px" width="250px">
+        <div class="single-img" style="padding: 30px;"><img src="flex-4.jpg" height="400px" width="250px" id="img4">
             <div class="top-left" style="position: absolute; top: 50%; left: 80%;  font-size: larger; transform:translate(-50%,-50%);">Fourth Image</div>
         </div>
     </div>
