@@ -4,9 +4,26 @@
 <head>
     <title>Template</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("img").src = images[x];
+        }
+
+        function changeImage() {
+            setInterval(displayNextImage, 2500);
+        }
+        var images = [],
+            x = -1;
+        images[0] = "1.jpg";
+        images[1] = "map.png";
+        images[2] = "2.jpg";
+        images[3] = "flex-1.jpg";
+        images[4] = "flex-2.jpg"
+    </script>
 </head>
 
-<body>
+<body onload="changeImage()">
     <header>
 
         <nav>
@@ -27,10 +44,8 @@
 
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br> Nulla voluptatum fuga mollitia dignissimos<br> quae dolorem eaque amet quod. Laborum, maiores.
     </p>
-
-
-    <div class="img-area">
-         <div class="single-img"><img src="flex-1.jpg" height="400px" width="250px">
+    <div class="img-area" style="position: relative; color: white; text-align: center;">
+        <div class="single-img"><img src="flex-1.jpg" height="400px" width="250px" id="img">
             <div class="top-left" style="position: absolute; top: 50%; left: 18%; font-size: larger; transform:translate(-50%,-50%);">First Image</div>
         </div>
         <div class="single-img" style="padding: 30px; "><img src="flex-2.jpg" height="400px" width="250px">
@@ -43,9 +58,8 @@
             <div class="top-left" style="position: absolute; top: 50%; left: 80%;  font-size: larger; transform:translate(-50%,-50%);">Fourth Image</div>
         </div>
     </div>
-    <footer>
-     <center>
-        <div class="icon-container" style="display: flex; flex-wrap: nowrap; width: 50px; height: 50px;">
+    <center>
+        <div class="icon-container" style="display: flex; flex-wrap: nowrap; width: 50px; height: 50px; padding:5px;">
             <img src="fb.png" />
             <img src="g+.jfif" />
             <img src="tw.png" />
@@ -53,6 +67,6 @@
     </center>
     </div>
     <h2>Copyright &copy 2021 Your Company - design Template</h2>
-    </footer>
 </body>
+
 </html>
